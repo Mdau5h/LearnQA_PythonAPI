@@ -6,5 +6,6 @@ methods = {
     'compare': 'compare_query_type'
 }
 
-compare = requests.request("GET", url + methods['compare'])
+compare = requests.request("HEAD", url + methods['compare'])
 print(compare.text)
+print(compare.status_code)
