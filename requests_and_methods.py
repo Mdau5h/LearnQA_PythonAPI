@@ -19,4 +19,4 @@ for type in request_types:
     else:
         compare = requests.request(type, url + methods['compare'], data={'method': type})
     print(type)
-    print(compare)
+    print(compare.text)
