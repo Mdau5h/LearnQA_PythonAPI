@@ -14,9 +14,11 @@ request_types = [
 ]
 
 for type in request_types:
-    if type == 'GET':
-        compare = requests.request(type, url + methods['compare'], params={'method': type})
-    else:
-        compare = requests.request(type, url + methods['compare'], data={'method': type})
-    print(type)
-    print(compare.text)
+    for method in request_types:
+        if type == 'GET':
+            compare = requests.request(type, url + methods['compare'], params={'method': method})
+        else:
+            compare = requests.request(type, url + methods['compare'], data={'method': method})
+        print(type)
+        print(method)
+        print(compare.text)
