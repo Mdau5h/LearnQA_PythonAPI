@@ -10,7 +10,7 @@ request_types = [
     'GET',
     'POST',
     'PUT',
-    'DELETE',
+    'DELETE'
 ]
 
 for type in request_types:
@@ -19,6 +19,8 @@ for type in request_types:
             compare = requests.request(type, url + methods['compare'], params={'method': method})
         else:
             compare = requests.request(type, url + methods['compare'], data={'method': method})
-        print(type)
-        print(method)
-        print(compare.text)
+        # print(type)
+        # print(method)
+        # print(compare.text)
+        if method != type and 'success' in compare.text:
+            print(f'Обнаружено расхождение с кодом 200: {method=} {type=}')
