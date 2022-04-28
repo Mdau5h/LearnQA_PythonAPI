@@ -9,3 +9,4 @@ methods = {
 compare = requests.request("HEAD", url + methods['compare'])
 print(compare.text)
 print(compare.status_code)
+
