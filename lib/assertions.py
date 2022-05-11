@@ -10,3 +10,4 @@ class Assertions:
             assert False, f"Failed to decode response to JSON format. Response text is '{response.text}'"
         assert name in response_as_dict, f"Response JSON doesn't have key '{name}'"
         assert response_as_dict[name] == expected_value, error_message
+
