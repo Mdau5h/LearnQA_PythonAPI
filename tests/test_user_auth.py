@@ -1,7 +1,7 @@
 import pytest
-import requests
 from lib.base_case import BaseCase
 from lib.assertions import Assertions
+from lib.my_requests import MyRequests
 
 
 class TestUserAuth(BaseCase):
@@ -22,15 +22,15 @@ class TestUserAuth(BaseCase):
             'password': '1234'
         }
 
-        login = requests.post(self.url + self.methods['login'], data=data)
+        login = MyRequests.post("/user/login", data=data)
 
         self.auth_sid = self.get_cookie(login, "auth_sid")
         self.token = self.get_header(login, "x-csrf-token")
         self.user_id_from_auth_method = self.get_json_value(login, "user_id")
 
     def test_auth_user(self):
-        check_id = requests.get(
-            self.url + self.methods['check_id'],
+        check_id = MyRequests.get(
+            '/user/auth',
             headers={"x-csrf-token": self.token},
             cookies={"auth_sid": self.auth_sid}
         )
@@ -45,13 +45,13 @@ class TestUserAuth(BaseCase):
     @pytest.mark.parametrize('condition', exclude_params)
     def test_negative_auth_check(self, condition):
         if condition == "no_cookie":
-            check_id = requests.get(
-                self.url + self.methods['check_id'],
+            check_id = MyRequests.get(
+                '/user/auth',
                 headers={"x-csrf-token": self.token}
             )
         elif condition == "no_token":
-            check_id = requests.get(
-                self.url + self.methods['check_id'],
+            check_id = MyRequests.get(
+                '/user/auth',
                 cookies={"auth_sid": self.auth_sid}
             )
 
