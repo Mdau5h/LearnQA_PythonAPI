@@ -45,7 +45,7 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in test_user_agent.py">
+  <component name="RunManager" selected="Python tests.Python tests for test_user_edit.TestUserEdit.test_edit_user_auth_by_wrong_user">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="LearnQA_PythonAPI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -109,6 +109,20 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_user_edit.TestUserEdit.test_edit_user_auth_by_wrong_user" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="LearnQA_PythonAPI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_user_edit.TestUserEdit.test_edit_user_auth_by_wrong_user&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for test_user_register.TestUserRegister.test_create_user_with_incorrect_emeil" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="LearnQA_PythonAPI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,6 +154,7 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python tests.Python tests in test_user_agent.py" />
+      <item itemvalue="Python tests.Python tests for test_user_edit.TestUserEdit.test_edit_user_auth_by_wrong_user" />
       <item itemvalue="Python tests.Python tests for test_user_agent.TestUserAgent" />
       <item itemvalue="Python tests.Python tests for test_user_agent.TestUserAgent.test_use_agent" />
       <item itemvalue="Python tests.Python tests for test_user_auth.TestUserAuth" />
@@ -147,6 +162,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_user_edit.TestUserEdit.test_edit_user_auth_by_wrong_user" />
         <item itemvalue="Python tests.Python tests for test_user_agent.TestUserAgent" />
         <item itemvalue="Python tests.Python tests for test_user_agent.TestUserAgent.test_use_agent" />
         <item itemvalue="Python tests.Python tests for test_user_register.TestUserRegister.test_create_user_with_incorrect_emeil" />
