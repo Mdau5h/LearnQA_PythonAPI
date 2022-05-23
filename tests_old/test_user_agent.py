@@ -1,6 +1,6 @@
 import pytest
 import requests
-import test_old.data_to_test as d
+from data.data_to_test import user_agent_values
 from lib.base_case import BaseCase
 from lib.assertions import Assertions
 
@@ -15,7 +15,7 @@ class TestUserAgent(BaseCase):
             'device'
         ]
 
-    @pytest.mark.parametrize('user_agent, expected_result', list(map(tuple, d.user_agent_values.items())))
+    @pytest.mark.parametrize('user_agent, expected_result', list(map(tuple, user_agent_values.items())))
     def test_use_agent(self, user_agent, expected_result):
         user_agent_responce = requests.get(self.url, headers={"User-Agent": user_agent})
         assert user_agent_responce.status_code == 200, f"Error {user_agent_responce.status_code}. Response text is '{user_agent_responce.text}"
