@@ -8,7 +8,7 @@ class TestUserEdit(BaseCase):
     def setup(self):
         # Создаем тестового пользователя
         self.test_data = self.prepare_registration_data()
-        print(self.test_data)
+        # print(self.test_data)
         self.create_response = MyRequests.post("/user/", data=self.test_data)
         Assertions.assert_code_status(self.create_response, 200)
         Assertions.assert_json_has_key(self.create_response, 'id')
@@ -95,10 +95,12 @@ class TestUserEdit(BaseCase):
                                        headers={'x-csrf-token': token},
                                        cookies={'auth_sid': auth_sid},
                                        )
+
         Assertions.assert_code_status(edit_response, 400)
         assert edit_response.content.decode(
             'utf-8') == 'Please, do not edit test users with ID 1, 2, 3, 4 or 5.',\
             f"User edited with wrong token. Response content: '{edit_response.content}'"
+
 
     # Изменение email пользователя, будучи авторизованным тем же пользователем, на новый email без символа @
     def test_edit_user_incorrect_email(self):

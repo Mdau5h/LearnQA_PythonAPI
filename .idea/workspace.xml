@@ -25,14 +25,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/mdau5h/Документы/GitHub/autotest-api",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Python"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mdau5h/Документы/GitHub/autotest-api&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Python&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests" />
@@ -45,7 +45,7 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_user_edit.TestUserEdit.test_edit_user_auth_by_wrong_user">
+  <component name="RunManager" selected="Python tests.Python tests for test_user_delete.TestUserDelete.test_delete_protected_user">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="LearnQA_PythonAPI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,7 +95,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_user_auth.TestUserAuth" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_user_delete.TestUserDelete.test_delete_protected_user" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="LearnQA_PythonAPI" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -105,7 +105,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_user_auth.TestUserAuth&quot;" />
+      <option name="_new_target" value="&quot;test_user_delete.TestUserDelete.test_delete_protected_user&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -154,19 +154,19 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python tests.Python tests in test_user_agent.py" />
+      <item itemvalue="Python tests.Python tests for test_user_delete.TestUserDelete.test_delete_protected_user" />
       <item itemvalue="Python tests.Python tests for test_user_edit.TestUserEdit.test_edit_user_auth_by_wrong_user" />
       <item itemvalue="Python tests.Python tests for test_user_agent.TestUserAgent" />
       <item itemvalue="Python tests.Python tests for test_user_agent.TestUserAgent.test_use_agent" />
-      <item itemvalue="Python tests.Python tests for test_user_auth.TestUserAuth" />
       <item itemvalue="Python tests.Python tests for test_user_register.TestUserRegister.test_create_user_with_incorrect_emeil" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_user_delete.TestUserDelete.test_delete_protected_user" />
         <item itemvalue="Python tests.Python tests for test_user_edit.TestUserEdit.test_edit_user_auth_by_wrong_user" />
         <item itemvalue="Python tests.Python tests for test_user_agent.TestUserAgent" />
         <item itemvalue="Python tests.Python tests for test_user_agent.TestUserAgent.test_use_agent" />
         <item itemvalue="Python tests.Python tests for test_user_register.TestUserRegister.test_create_user_with_incorrect_emeil" />
-        <item itemvalue="Python tests.Python tests for test_user_auth.TestUserAuth" />
       </list>
     </recent_temporary>
   </component>
