@@ -7,6 +7,24 @@ from lib.my_requests import MyRequests
 
 class TestUserGet(BaseCase):
 
+    ids = [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+    ]
+
     def test_get_user_details_not_auth(self):
         fields_response_should_not_have = [
             "email",
@@ -54,13 +72,10 @@ class TestUserGet(BaseCase):
             "firstName",
             "lastName"
         ]
-        user_id_to_check = 4
+        user_id_to_check = 1
         auth_response = MyRequests.post("/user/login", data=data)
         auth_sid = self.get_cookie(auth_response, 'auth_sid')
         token = self.get_header(auth_response, "x-csrf-token")
-
-        print(auth_response)
-        print(auth_response.content)
         assert user_id_to_check != self.get_json_value(auth_response, "user_id"), "You authorised as the same user you trying to check"
 
         check_response = MyRequests.get(f"/user/{user_id_to_check}",
@@ -68,5 +83,6 @@ class TestUserGet(BaseCase):
                                         cookies={'auth_sid': auth_sid}
                                         )
 
+        # print(check_response.content)
         Assertions.assert_json_has_key(check_response, "username")
         Assertions.assert_json_has_no_keys(check_response, fields_response_should_not_have)
