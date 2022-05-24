@@ -1,12 +1,15 @@
-import pytest
+import allure
+
 
 from lib.base_case import BaseCase
 from lib.assertions import Assertions
 from lib.my_requests import MyRequests
 
-
+@allure.epic("Get user tests")
 class TestUserGet(BaseCase):
 
+    @allure.description("This test gets user detail with no authorisation")
+    @allure.severity(allure.severity_level.BLOCKER)
     def test_get_user_details_not_auth(self):
         fields_response_should_not_have = [
             "email",
@@ -18,6 +21,8 @@ class TestUserGet(BaseCase):
         Assertions.assert_json_has_key(response, "username")
         Assertions.assert_json_has_no_keys(response, fields_response_should_not_have)
 
+    @allure.description("This test gets user detail with being authorised as this user")
+    @allure.severity(allure.severity_level.BLOCKER)
     def test_get_user_details_auth_as_same_user(self):
         data = {
             'email': 'vinkotov@example.com',
@@ -44,6 +49,8 @@ class TestUserGet(BaseCase):
 
         Assertions.assert_json_has_keys(check_response, expected_fields)
 
+    @allure.description("This test gets user detail with being authorised as another user")
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_get_user_details_auth_as_another_user(self):
         # auth
         data = {

@@ -30,6 +30,7 @@ class TestUserAuth(BaseCase):
         self.user_id_from_auth_method = self.get_json_value(login, "user_id")
 
     @allure.description("This test successfully authorize user by email and password")
+    @allure.severity(allure.severity_level.BLOCKER)
     def test_auth_user(self):
         check_id = MyRequests.get(
             '/user/auth',
@@ -46,6 +47,7 @@ class TestUserAuth(BaseCase):
 
     @allure.description("This test checks authorization without cookie or token")
     @pytest.mark.parametrize('condition', exclude_params)
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_negative_auth_check(self, condition):
         if condition == "no_cookie":
             check_id = MyRequests.get(

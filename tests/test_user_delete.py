@@ -1,10 +1,14 @@
+import allure
 from lib.base_case import BaseCase
 from lib.assertions import Assertions
 from lib.my_requests import MyRequests
 
+@allure.epic("Delete user cases")
 class TestUserDelete(BaseCase):
 
     # Попытка удалить пользователя по ID = 2
+    @allure.description("This test tries to delete protected user")
+    @allure.severity(allure.severity_level.BLOCKER)
     def test_delete_protected_user(self):
         # login
         login_data = {
@@ -28,6 +32,8 @@ class TestUserDelete(BaseCase):
             f"It is possible to delete protected user. Response content: '{delete_response.content}'"
 
     # Позитивный тест: создать, залогиниться, удалить, проверить
+    @allure.description("This test create test user then login and delete it")
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_delete_user_positive(self):
         # create
         test_data = self.prepare_registration_data()
@@ -67,6 +73,8 @@ class TestUserDelete(BaseCase):
             'utf-8') == 'User not found', f"Unexpected content. Response content: '{delete_response.content}'"
 
     # Попытка удалить пользователя из-под другого пользователя
+    @allure.description("This test tries to delete user with being authorised by another user")
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_delete_user_wrong_auth(self):
         # create
         test_data = self.prepare_registration_data()

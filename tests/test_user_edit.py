@@ -1,8 +1,10 @@
+import allure
+
 from lib.base_case import BaseCase
 from lib.assertions import Assertions
 from lib.my_requests import MyRequests
 
-
+@allure.epic("Edit user cases")
 class TestUserEdit(BaseCase):
 
     def setup(self):
@@ -14,6 +16,8 @@ class TestUserEdit(BaseCase):
         Assertions.assert_json_has_key(self.create_response, 'id')
 
     # Изменение данных только что созданного пользователя
+    @allure.severity(allure.severity_level.BLOCKER)
+    @allure.description("This test tires to edit the newly created user")
     def test_edit_just_created_user(self):
 
         # Register
@@ -64,6 +68,8 @@ class TestUserEdit(BaseCase):
         )
 
     # Изменение данных пользователя, будучи неавторизованным
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.description("This test tires to user without authorisation")
     def test_edit_user_not_auth(self):
         # edit
         user_id = self.get_json_value(self.create_response, "id")
@@ -75,6 +81,8 @@ class TestUserEdit(BaseCase):
             'utf-8') == f"Auth token not supplied", f"User edited without authorisation. Response content: '{edit_response.content}'"
 
     # Изменение данных пользователя, будучи авторизованным другим пользователем
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.description("This test tries to edit user with being authorised by another user")
     def test_edit_user_auth_by_wrong_user(self):
         # login
         login_data = {
@@ -103,6 +111,8 @@ class TestUserEdit(BaseCase):
 
 
     # Изменение email пользователя, будучи авторизованным тем же пользователем, на новый email без символа @
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.description("This test tries to edit email with no '@' symbol in it")
     def test_edit_user_incorrect_email(self):
         # login
         login_response = MyRequests.post("/user/login", data=self.test_data)
@@ -126,6 +136,7 @@ class TestUserEdit(BaseCase):
             f"User edited with incorrect email. Response content: '{edit_response.content}'"
 
     # Изменение firstName пользователя, будучи авторизованным тем же пользователем, на очень короткое значение в один символ
+    @allure.description("This test tries to edit name to one symbol")
     def test_edit_user_short_firstname(self):
         # login
         login_response = MyRequests.post("/user/login", data=self.test_data)
